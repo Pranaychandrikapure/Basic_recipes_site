@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+{% block custom %}
+<link rel="stylesheet" href="{% static 'css/reg.css' %}" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+{% endblock %}
+{% block start %}
+<body>
+    <div class="mains">
+        <div class="logos">
+            <div class="title">Sign UP</div>
+            {% if messages %}
+            {{message.tags}}
+            <div class="alert" role="alert">
+                {% for message in messages %}
+                <a href="#" class="red">{{ message }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="credentials">
+                    <div class="username">
+                        <i class='bx bxl-blogger' ></i>
+                        <input name="first_name" type="text"  placeholder="     Name" required class="form-control">
+                    </div>
+                    <div class="username">
+                        <i class='bx bx-log-in-circle' ></i>
+                        <input name="email" type="text"  placeholder="      Email" required class="form-control">
+                    </div>
+                    <div class="username">
+                        <i class="ri-user-fill"></i>
+                        <input name="username" type="text"  placeholder="     User name" required class="form-control">
+                    </div>
+                    <div class="password">
+                        <i class='bx bxs-lock-alt'></i>
+                        <input name="password" type="password"  placeholder="      password" required class="form-control">
+                    </div>
+                </div>
+                <button class="submit">Register</button>
+            </form>
+            <div class="link">
+                <p>Already have account:</p><a href="/login_page/">Sign in</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+{% endblock %}

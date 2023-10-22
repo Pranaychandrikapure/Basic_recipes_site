@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: #485563;
+    background-color: #fff;
+    justify-content: center;
+    background-image: url(../images/brooke-lark-08bOYnH_r_E-unsplash.jpg);
+    background-size: cover;
+}
+.mains{
+    width: 500px;
+    height: 500px;
+    border-left: solid ;
+    padding: 3px 5px 30px 130px;
+    margin-left: 500px;
+    margin-top: 5px;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+.title{
+    text-align: center;
+    font-size: 40px;
+    color: #555;
+    letter-spacing: 4px;
+    margin:70px;
+    font-family: gotham;
+}
+.credentials{
+    width: 100%;
+    padding: 2px 5px 0px 5px;
+}
+.credentials input{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    color: #555;
+    padding: 20px 10px 20px 5px;
+    letter-spacing: 2px;
+}
+.username{
+    margin-bottom: 40px;
+    border-bottom: 2px solid #c2c4c3;
+    transition: .5s ease;
+}
+.username:hover{
+    border-bottom: 3px solid #485563;
+}
+.password{
+    margin-bottom: 40px;
+    border-bottom: 2px solid #c2c4c3;
+}
+.password:hover{
+    border-bottom: 3px solid #485563;
+}
+.submit{
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    background-image: linear-gradient(to right, #485563 0%, #29323c 51%, #485563 100%);
+    background-size: 200%;
+    box-shadow: 3px 3px 8px #b1b1b1,
+                -3px -3px 8px #fff;
+    transition: .5s;
+}
+.submit:hover{
+ background-position: right;
+}
+.link{
+    margin: 10px;
+    text-align: center;
+}
+.link a{
+    color: #aaa;
+    font-size: 15px;
+    text-decoration: none;
+}
+.alert{
+    margin: 10px;
+    text-align: center;
+}
+.red{
+    color: red;
+}

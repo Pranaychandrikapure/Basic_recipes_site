@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block custom %}
+<link rel="stylesheet" href="{% static 'css/receipes.css' %}" type="text/css">
+{% endblock %}
+{% block start %}
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="container">
+        <div class="box">
+            <h3>Update your receipe</h3>
+            <div class="name">
+                <i class="fas fa-user"></i>
+                <input name="receipe_name" type="text" value="{{receipes.receipe_name}}" class="form-control" placeholder="Name of receipe" id="name">
+            </div>
+            <div class="message-box">
+                <textarea name="receipe_description" class="form-control" id="msg" cols="30" rows="10" placeholder="Description of your receipe">{{receipes.receipe_description}}</textarea>
+            </div>
+            
+            <div class="button">
+                <label class="custom-file-upload">
+                    <input type="file" class="Upload" value="{{receipes.receipe_image}}" name="receipe_image">
+                   Upload image 
+                </label>
+                <button id="send" onclick="message()">Send</button>
+            </div>
+            <div class="message">
+                <div class="success" id="success">Your Message Successfully Sent!</div>
+                <div class="danger" id="danger">Feilds Can't be Empty!</div>
+            </div>
+        </div>
+    </div>
+    </form>
+    <script src="../../static/javascript/receipes.js"></script>
+{% endblock %}

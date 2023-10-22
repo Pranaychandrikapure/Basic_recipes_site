@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block custom %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+{% endblock %}
+{% block start %}
+<div class="mains">
+    <div class="logo-login">
+        <div class="title">Login</div>
+        <div class="link" role="alert">
+            {% for message in messages %}
+            <a href="#" class="red">{{ message }}</a>
+            {% endfor %}
+        </div>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="credentials">
+                    <div class="username">
+                        <i class="ri-user-fill"></i>
+                        <input type="text" name="username" placeholder="  username" required="">
+                    </div>
+                    <div class="password"> 
+                        <i class='bx bxs-lock-alt'></i>
+                        <input type="password" name="password" placeholder="  password" required="">
+                    </div>
+                </div>
+                <button class="submit">Submit</button>
+            </form>
+            <div class="link">
+                <a href="/register_page/">Register here</a>&nbsp <a href="#">forget password</a>
+            </div>
+        </div>
+    </div>
+    {% if messages %}
+    {{message.tags}}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block custom %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}" type="text/css">
+{% endblock %}
+{% block navbar %}
+<header>
+    <a href="#" class="logo"><i class="ri-home-heart-fill"><span>Cockery</span></i></a>
+
+    <ul class="navbar">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/receipes/" >Add receipe</a></li>
+        <li><a href="#" >Services</a></li>
+        <li><a href="#" >Blog</a></li>
+        <li><a href="#" >Contact</a></li>
+    </ul>
+    <div class="main">
+        {% if request.user.is_authenticated %}
+        <a href="/logout_page/" class="user"><i class="ri-user-fill"></i>Log Out</a>
+        {% else %}
+        <a href="/login_page/" class="user"><i class="ri-user-fill"></i>Sign In</a>
+        {% endif %}
+        <a href="#">Register</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+    </div>
+</header>
+
+<script src="./index.js"></script>
+{% endblock %}
